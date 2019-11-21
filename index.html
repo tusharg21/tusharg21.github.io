@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sumana Price Calculator</title>
+</head>
+<body>
+    <p><h4>Sumana Dress Material Price Calculator</h4><p>
+</body>
+
+<form id=formDressMaterial>
+    <label>Dress Material Price (Rs.):<input type="number" id="dressMaterialPrice" size="5"></label><br>
+    <br>
+    <label>Profit Desired (%):<input type="number" id="profitDesired" size="5"></label><br>
+    <br>
+    <label>GST (%):<input type="number" id="gstPercentage" size="5"></label><br>
+    <br>
+    <label>Courier Charges (Rs.):<input type="number" id="courierCharges" size="5"></label><br>
+    <br>
+    <label>Final Price Of The Dress (Rs.):<input type="number" id="finalPrice" size="5"></label><br>
+    <br>    
+    <input id="calculate" type="button" value="Calculate" onclick="calculateFinalPrice();"><br>
+    <br>
+      <script type = "text/javascript">
+            function calculateFinalPrice(){
+                var dmPrice = parseFloat(document.getElementById("formDressMaterial").dressMaterialPrice.value);            
+                var profit = parseFloat(document.getElementById("formDressMaterial").profitDesired.value);
+                var gst = parseFloat(document.getElementById("formDressMaterial").gstPercentage.value);
+                var courier = parseFloat(document.getElementById("formDressMaterial").courierCharges.value);
+                document.getElementById("finalPrice").value = dmPrice + (dmPrice*profit/100) + (dmPrice*gst/100) + courier;
+            }
+
+      </script>    
+</form>
+<iframe src='https://www.embed.com/app/calculator/gray-calculator.html' style='width: 500px; height: 500px; position:absolute;top:0px;left:350px;' scrolling='no' frameBorder='0'></iframe>
+</html>
